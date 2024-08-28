@@ -40,7 +40,7 @@ Data is stored in SharePoint List. You can import the app from the PowerApps sou
 - **Images**: Images used in the app are stored in the Image folder.
 
 ## Video Demo
-[Link Video Demo](#)
+[Video Demo](https://github.com/tieugem1997/SparePartManagement/blob/main/Video%20Demo.mp4)
 
 ## Usage Instructions
 1. **Import SharePoint List**:
