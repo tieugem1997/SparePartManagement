@@ -1,0 +1,16 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |
+        =Set(varSortColumn,"Created");
+        Set(varSortDirection, SortOrder.Descending);
+        Set(varSortStock,"Stock");
+        Set(varSortStockDirection, SortOrder.Descending);
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

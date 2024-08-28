@@ -1,0 +1,763 @@
+HistoricalScreen As screen:
+    LoadingSpinnerColor: =RGBA(105, 121, 126, 1)
+    OnVisible: =
+
+    Icon_Home_His As icon.Home:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(MainScreen,ScreenTransition.Cover)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =50
+        X: =5
+        Y: =5
+        ZIndex: =1
+
+    Label_Home_His As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        OnSelect: =Navigate(MainScreen,ScreenTransition.Cover)
+        Size: =24
+        Text: ="Home"
+        Width: =114
+        X: =60
+        ZIndex: =2
+
+    DatePicker_SortDate As datepicker:
+        BorderColor: =RGBA(116, 116, 116, 1)
+        CalendarHeaderFill: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        Color: =RGBA(116, 116, 116, 1)
+        DefaultDate: =Date(Year(Today()),Month(Today()),Day(Today()))
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(116, 116, 116, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        HoverDateFill: =RGBA(200, 200, 200, 1)
+        IconBackground: =Color.Gray
+        PaddingTop: =5
+        SelectedDateFill: =RGBA(105, 121, 126, 1)
+        Size: =16
+        Width: =163
+        Y: =129
+        ZIndex: =5
+
+    ComboBox_Tools As combobox:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(33, 33, 33, 1)
+        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["Value"]
+        Font: =Font.'Segoe UI'
+        Height: =54
+        HoverBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverColor: =RGBA(51, 51, 51, 1)
+        HoverFill: =RGBA(212, 212, 212, 1)
+        InputTextPlaceholder: ="Find FS"
+        IsSearchable: =false
+        Items: =Distinct(SparePartList,'FS Item')
+        NoSelectionText: ="Find FS"
+        PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(105, 121, 126, 1)
+        SearchFields: =[""]
+        SearchItems: =[]
+        SelectionFill: =RGBA(105, 121, 126, 1)
+        SelectMultiple: =false
+        Size: =16
+        Width: =180
+        X: =308
+        Y: =130
+        ZIndex: =6
+
+    Label_Title_Date As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =16
+        Text: ="Date"
+        Width: =100
+        Y: =199
+        ZIndex: =7
+
+    Label_Title_His_PartName As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =16
+        Text: ="Part Name"
+        Width: =156
+        X: =112
+        Y: =198
+        ZIndex: =8
+
+    Label_Title_His_PartNumber As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =16
+        Text: ="Part Number"
+        Width: =156
+        X: =269
+        Y: =198
+        ZIndex: =9
+
+    Label_Title_His_Qty As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =16
+        Text: ="Quantity"
+        Width: =138
+        X: =425
+        Y: =198
+        ZIndex: =10
+
+    Gallery_HistoricalRecords As gallery.galleryVertical:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DelayItemLoading: =true
+        Height: =875
+        Items: |-
+            =Switch(
+                varSortColumn,
+                "Created",
+                SortByColumns(
+                    Filter(
+                        SparePartDatabase,
+                        Date  = DatePicker_SortDate.SelectedDate,
+                        Shift = ComboBox_Tools_1.Selected.Value || IsBlank(ComboBox_Tools_1.Selected.Value),
+                        'Part Number' = ComboBox_Tools.Selected.Value || IsBlank(ComboBox_Tools.Selected.Value),
+                        Title = ComboBox_Shift.Selected.Value || IsBlank(ComboBox_Shift.Selected.Value)
+                    ),
+                    "Created",
+                    If(
+                        varSortDirection = SortOrder.Ascending,
+                        SortOrder.Ascending,
+                        SortOrder.Descending
+                    )
+                ),
+                "PartName",
+                SortByColumns(
+                    Filter(
+                        SparePartDatabase,
+                        Date = DatePicker_SortDate.SelectedDate,
+                        Shift = ComboBox_Tools_1.Selected.Value || IsBlank(ComboBox_Tools_1.Selected.Value),
+                        'Part Number' = ComboBox_Tools.Selected.Value || IsBlank(ComboBox_Tools.Selected.Value),
+                        Title = ComboBox_Shift.Selected.Value || IsBlank(ComboBox_Shift.Selected.Value)
+                    ),
+                    "PartName",
+                    If(
+                        varSortDirection = SortOrder.Ascending,
+                        SortOrder.Ascending,
+                        SortOrder.Descending
+                    )
+                ),
+                "PartNumber",
+                SortByColumns(
+                    Filter(
+                        SparePartDatabase,
+                        Date = DatePicker_SortDate.SelectedDate,
+                        Shift = ComboBox_Tools_1.Selected.Value || IsBlank(ComboBox_Tools_1.Selected.Value),
+                        'Part Number' = ComboBox_Tools.Selected.Value || IsBlank(ComboBox_Tools.Selected.Value),
+                        Title = ComboBox_Shift.Selected.Value || IsBlank(ComboBox_Shift.Selected.Value)
+                    ),
+                    "PartNumber",
+                    If(
+                        varSortDirection = SortOrder.Ascending,
+                        SortOrder.Ascending,
+                        SortOrder.Descending
+                    )
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =EditForm(Form_SpartPartData);Navigate(FormScreen,ScreenTransition.CoverRight)
+        TemplateSize: =55
+        Y: =260
+        ZIndex: =11
+
+        Label_His_Date As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Arial
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Created
+            Tooltip: =ThisItem.Created
+            Width: =88
+            X: =5
+            Y: =5
+            ZIndex: =1
+
+        Label_His_PartName As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Part Name'
+            Tooltip: |-
+                =ThisItem.'Tool: Part description'.Value
+            Width: =151
+            X: =97
+            Y: =5
+            ZIndex: =2
+
+        Label_His_PartNumber As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Arial
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Part Number'
+            Tooltip: |
+                =ThisItem.Tool.Value
+            Width: =177
+            X: =248
+            Y: =5
+            ZIndex: =3
+
+        Label_His_Qty As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Arial
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Quantity
+            Tooltip: =ThisItem.Quantity
+            Width: =113
+            X: =425
+            Y: =5
+            ZIndex: =4
+
+        Rectangle2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(105, 121, 126, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(105, 121, 126, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(105, 121, 126, 1)
+            Width: =625
+            X: =5
+            Y: =54
+            ZIndex: =5
+
+        Label_His_Date_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =If(ThisItem.Title = "Check In", Color.RoyalBlue, Color.DarkOrange) //RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Title
+            Tooltip: =ThisItem.Created
+            Width: =88
+            X: =538
+            Y: =5
+            ZIndex: =6
+
+    Icon_LastRecord As icon.Clock:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(54, 176, 75, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =29
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Clock
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Tooltip: |-
+            ="Last record: "& Last(SparePartDatabase).Created
+        Width: =30
+        X: =594
+        Y: =13
+        ZIndex: =12
+
+    Group_Update As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Button_His_Update As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =Color.Green
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Color.Green, -10%)
+            OnSelect: =Refresh(SparePartDatabase);Refresh(SparePartList);
+            PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(Color.Green, -30%)
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Size: =16
+            Text: ="Update"
+            Width: =200
+            X: =364
+            Y: =13
+            ZIndex: =3
+
+        Icon_His_Update As icon.Sync:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =26
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Sync
+            OnSelect: =Refresh(SparePartDatabase);Refresh(SparePartList);
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =30
+            X: =370
+            Y: =17
+            ZIndex: =4
+
+    Icon_Sort_His_PartNumber As icon.ArrowsUpDown:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =30
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: |-
+            =If(
+                varSortColumn <> "PartNumber",
+                Icon.Sort,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    Icon.ArrowUp,
+                    Icon.ArrowDown
+                )
+            )
+        OnSelect: |-
+            =Set(
+                varSortColumn,
+                "PartNumber"
+            );
+            Set(
+                varSortDirection,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    SortOrder.Descending,
+                    SortOrder.Ascending
+                )
+            )
+            //UpdateContext({SortDescending_PartNumber: !SortDescending_PartNumber})
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =30
+        X: =412
+        Y: =213
+        ZIndex: =13
+
+    Icon_Sort_His_PartName As icon.ArrowsUpDown:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =30
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: |-
+            =If(
+                varSortColumn <> "PartName",
+                Icon.Sort,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    Icon.ArrowUp,
+                    Icon.ArrowDown
+                )
+            )
+        OnSelect: |-
+            =Set(
+                varSortColumn,
+                "PartName"
+            );
+            Set(
+                varSortDirection,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    SortOrder.Descending,
+                    SortOrder.Ascending
+                )
+            )
+            //UpdateContext({SortDescending_PartName: !SortDescending_PartName})
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =30
+        X: =229
+        Y: =213
+        ZIndex: =14
+
+    Icon_Sort_His_Date As icon.ArrowsUpDown:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =30
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: |-
+            =If(
+                varSortColumn <> "Created",
+                Icon.Sort,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    Icon.ArrowUp,
+                    Icon.ArrowDown
+                )
+            )
+            //Icon.Sort
+        OnSelect: |-
+            =Set(
+                varSortColumn,
+                "Created"
+            );
+            Set(
+                varSortDirection,
+                If(
+                    varSortDirection = SortOrder.Ascending,
+                    SortOrder.Descending,
+                    SortOrder.Ascending
+                )
+            )
+            
+            //UpdateContext({SortDescending_Date: !SortDescending_Date})
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =30
+        X: =60
+        Y: =214
+        ZIndex: =15
+
+    GroupCheckIn As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =18
+
+        Button_His_Checkin As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 134, 208, 1), -10%)
+            OnSelect: =Set(var_check,"Withdraw"); ResetForm(Form_SpartPartData); NewForm(Form_SpartPartData); Navigate(FormScreen,ScreenTransition.CoverRight)
+            PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 134, 208, 1), -30%)
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Size: =16
+            Text: ="Withdraw"
+            Width: =200
+            X: =80
+            Y: =74
+            ZIndex: =16
+
+        Icon_His_Checkin As icon.Sync:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =26
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.DockRight
+            OnSelect: =Set(var_check,"Withdraw"); ResetForm(Form_SpartPartData); NewForm(Form_SpartPartData); Navigate(FormScreen,ScreenTransition.CoverRight)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =30
+            X: =86
+            Y: =78
+            ZIndex: =17
+
+    ComboBox_Tools_1 As combobox:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(33, 33, 33, 1)
+        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["Value"]
+        Font: =Font.'Segoe UI'
+        Height: =53
+        HoverBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverColor: =RGBA(51, 51, 51, 1)
+        HoverFill: =RGBA(212, 212, 212, 1)
+        InputTextPlaceholder: ="Shift"
+        IsSearchable: =false
+        Items: =Distinct(SparePartDatabase,Shift)
+        NoSelectionText: ="Shift"
+        PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(105, 121, 126, 1)
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionFill: =RGBA(105, 121, 126, 1)
+        Size: =16
+        Tooltip: ="Shift"
+        Width: =137
+        X: =168
+        Y: =130
+        ZIndex: =20
+
+    GroupCheckOut As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =20
+
+        Button_His_Checkout As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -10%)
+            OnSelect: =Set(var_check,"Refill"); ResetForm(Form_SpartPartData); NewForm(Form_SpartPartData); Navigate(FormScreen,ScreenTransition.CoverRight)
+            PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(221, 79, 14, 1), -30%)
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Size: =16
+            Text: ="Refill"
+            Width: =200
+            X: =364
+            Y: =74
+            ZIndex: =18
+
+        Icon_His_Checkout As icon.Sync:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(221, 79, 14, 1)
+            FocusedBorderThickness: =4
+            Height: =26
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.DockLeft
+            OnSelect: =Set(var_check,"Refill"); ResetForm(Form_SpartPartData); NewForm(Form_SpartPartData); Navigate(FormScreen,ScreenTransition.CoverRight)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =30
+            X: =370
+            Y: =78
+            ZIndex: =19
+
+    Label_Title_Date_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =16
+        Text: ="Check"
+        Width: =88
+        X: =537
+        Y: =198
+        ZIndex: =21
+
+    ComboBox_Shift As combobox:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(33, 33, 33, 1)
+        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["Value"]
+        Font: =Font.'Segoe UI'
+        Height: =53
+        HoverBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        HoverColor: =RGBA(51, 51, 51, 1)
+        HoverFill: =RGBA(212, 212, 212, 1)
+        InputTextPlaceholder: ="Shift"
+        IsSearchable: =false
+        Items: =Distinct(SparePartDatabase,Title)
+        NoSelectionText: ="Check"
+        PressedBorderColor: =ColorFade(RGBA(105, 121, 126, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(105, 121, 126, 1)
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionFill: =RGBA(105, 121, 126, 1)
+        SelectMultiple: =false
+        Size: =16
+        Tooltip: ="""Shift"""
+        Width: =149
+        X: =491
+        Y: =130
+        ZIndex: =22
+
